@@ -9,13 +9,11 @@
     ENVIRONMENT#2_name : dev-docker\
         Jenkins will fetch the dev branch and build jobs on the dev env container
 
-
-    USE CASE EXAMPLE :
-    =================
-
-    2 docker containers httpd for master and dev environments:\
-        - master-docker : `docker run -d -t -i -p 8090:80 -v /prod_env:/usr/local/apache2/htdocs/ --name 1_apacheProd_container httpd`\
-        - dev-docker : `docker run -d -t -i -p 8091:80 -v /test_env:/usr/local/apache2/htdocs/ --name 2_apacheDev_container httpd`
+        USE CASE EXAMPLE OF RUNNING APACHE DooD CONTAINER:
+        =================================================
+        2 docker containers httpd for master and dev environments:\
+            - master-docker : `docker run -d -t -i -p 8090:80 -v /prod_env:/usr/local/apache2/htdocs/ --name 1_apacheProd_container httpd`\
+            - dev-docker : `docker run -d -t -i -p 8091:80 -v /test_env:/usr/local/apache2/htdocs/ --name 2_apacheDev_container httpd`
 
     JOB#1_name : master_docker_deployment\
         If Developer push to master branch\ 
@@ -45,10 +43,7 @@
 - Creation container jenkins avec le Dockerfile : creation d'un subnet "DooD_net" auquel sera rattaché mes containers qui communiquent
 - Creation jobs jenkins qui lance un nouveau container docker : ce container sera un Dood (sibling container : volume liant le socket et le binaire lors de l'execution de la commande docker run -dit ...) et fera tourner un serveur httpd
 
-## Description des premiers jobs
 
-master-docker environment ==> branch master
-master-docker environment ==> branch dev
 
 
 
