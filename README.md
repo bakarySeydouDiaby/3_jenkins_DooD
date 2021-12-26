@@ -43,6 +43,7 @@
 - Creation container jenkins avec le Dockerfile : creation d'un subnet "DooDnet" auquel sera rattaché mes containers qui communiquent
     `docker run ... --network=DooDnet ...`
 - Creation jobs jenkins qui lance un nouveau container docker : 
+    
     ce container sera un Dood (sibling container : volume liant le socket et le binaire lors de l'execution de la commande docker run -dit ...) et fera tourner un serveur httpd
     `docker run ... -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker ...`
 
