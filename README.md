@@ -46,7 +46,8 @@
     
     ce container sera un Dood (sibling container : volume liant le socket et le binaire lors de l'execution de la commande docker run -dit ...) 
     
-    et fera tourner un serveur httpd
+    et fera tourner un serveur httpd :
+    
     `docker run ... -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker ...`
 
     ces containers feront tourner httpd en fetchant soit la branche master ou dev, dans lesquels figureront un fichier index.html
