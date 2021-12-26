@@ -38,10 +38,13 @@
 			and trigger #job 2 
 
 
-## Etape
+## Description des Etapes
 - Installtion ngrok pour triggers webhook
-- Creation container jenkins avec le Dockerfile : creation d'un subnet "DooD_net" auquel sera rattaché mes containers qui communiquent
+- Creation container jenkins avec le Dockerfile : creation d'un subnet "DooDnet" auquel sera rattaché mes containers qui communiquent
+    `docker run ... --network=DooDnet ...`
 - Creation jobs jenkins qui lance un nouveau container docker : ce container sera un Dood (sibling container : volume liant le socket et le binaire lors de l'execution de la commande docker run -dit ...) et fera tourner un serveur httpd
+    `docker run ... -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker ...`
+    ces containers feront tourner httpd en fetchant soit la branche master ou dev, dans lesquels figureront un fichier index.html
 
 
 
